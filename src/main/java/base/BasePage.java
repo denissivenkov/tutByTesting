@@ -1,5 +1,6 @@
 package base;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class BasePage {
     protected WebDriver driver;
     public BasePage (WebDriver driver) {this.driver=driver;}
+    protected Logger log = Logger.getLogger(this.getClass().getName());
     protected final String BASE_URL = "http://tut.by";
 
     public boolean isElementPresent(String by) {
