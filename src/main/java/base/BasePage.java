@@ -2,6 +2,7 @@ package base;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -13,7 +14,7 @@ public class BasePage {
     protected WebDriver driver;
     public BasePage (WebDriver driver) {this.driver=driver;}
     protected Logger log = Logger.getLogger(this.getClass().getName());
-    protected final String BASE_URL = "http://tut.by";
+    protected final String BASE_URL = "http://www.tut.by/";
 
     public boolean isElementPresent(String by) {
         try {
@@ -32,7 +33,7 @@ public class BasePage {
             return isElementPresent(by);
         }
         finally {
-            driver.manage().timeouts().implicitlyWait(PAUSE_LENGTH.AJAX.value(), TimeUnit.SECONDS);
+
         }
     }
 

@@ -26,5 +26,8 @@
         <module name="tutByTesting" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tutByTesting" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
