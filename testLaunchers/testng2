@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<suite name="ChromeTest" parallel="none">
+
+
+    <test name="ServiciesPageTest">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="tests.MailTest" />
+            <class name="tests.MainTest" />
+        </classes>
+    </test>
+</suite>
