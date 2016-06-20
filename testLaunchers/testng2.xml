@@ -4,7 +4,7 @@
 <suite name="ChromeTest" parallel="none">
 
 
-    <test name="ServiciesPageTest">
+    <test name="MainPageTests">
         <parameter name="browser" value="chrome" />
         <classes>
             <class name="tests.MainTest" />

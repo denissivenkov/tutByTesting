@@ -71,10 +71,7 @@ public class MailPage extends BasePage {
     @FindBy(xpath = NEDVIZ_LINK)
     private WebElement nedvizLink;
 
-    public String getTitleText () {
-        String title = driver.getTitle();
-        return title;
-    }
+
 
     public void goToRabotaPage () {
         log.info("Navigate to Rabota page");

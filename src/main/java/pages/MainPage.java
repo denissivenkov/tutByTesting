@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +19,7 @@ public class MainPage extends BasePage {
 
     public final static String UNSUCCESSFULL_SEARCH_ERROR = "Искомая комбинация слов нигде не встречается.";
 
-    final String MAIL_LINK = ".//*[@id='mainmenu']/ul/li/a[contains(text(), 'Почта') ]";
+    final String MAIL_LINK = "//a[contains(@href, 'mail.tut.by')]";
     @FindBy(xpath = MAIL_LINK)
     private WebElement mailLink;
 
@@ -79,20 +80,14 @@ public class MainPage extends BasePage {
         log.info("User is on Rabota page");
     }
 
-
-
-
-
-    public String getTitleText () {
-        String title = driver.getTitle();
-        return title;
+    public void performSearch (String string) {
+        log.info("Perform a search");
+        waitForElement(SEARCH_FIELD);
+        waitForElement(SEARCH_BUTTON);
+        searchField.clear();
+        searchField.sendKeys(string);
+        searchButton.click();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
-
-
-
-
-
-
-
 
 }

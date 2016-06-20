@@ -13,8 +13,7 @@ public class FinancePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public String getTitleText () {
-        String title = driver.getTitle();
-        return title;
-    }
+    public static final String FINANCE_PAGE_TITLE = "FINANCE.TUT.BY - Курсы валют, кредиты и вклады, депозиты, курсы обмена валют, форекс";
+
+
 }
