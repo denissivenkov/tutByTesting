@@ -8,6 +8,20 @@
     <artifactId>tutByTesting</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <profiles>
+        <profile>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <id>default</id>
+            <properties>
+                <browser.var>chrome</browser.var>
+                <suite.name>acceptance</suite.name>
+                <host.var>http://tut.by/</host.var>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

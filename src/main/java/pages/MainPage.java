@@ -19,19 +19,19 @@ public class MainPage extends BasePage {
 
     public final static String UNSUCCESSFULL_SEARCH_ERROR = "Искомая комбинация слов нигде не встречается.";
 
-    final String MAIL_LINK = "//a[contains(@href, 'mail.tut.by')]";
+    final String MAIL_LINK = "//a[contains(@href, 'http://mail.tut.by/#ua:top_menu_www.tut.by~1')]";
     @FindBy(xpath = MAIL_LINK)
     private WebElement mailLink;
 
-    final String FINANCE_LINK = ".//*[@id='mainmenu']/ul/li/a[contains(text(), 'Финансы') ]";
+    final String FINANCE_LINK = "//a[contains(@href, 'http://finance.tut.by/#ua:top_menu_www.tut.by~3')]"; //"//a[contains(@href, 'http://afisha.tut.by/#ua:top_menu_www.tut.by~5"')]"
     @FindBy(xpath = FINANCE_LINK)
     private WebElement financeLink;
 
-    final String AFISHA_LINK = ".//*[@id='mainmenu']/ul/li/a[contains(text(), 'Афиша') ]";
+    final String AFISHA_LINK = "//a[contains(@href, 'http://afisha.tut.by/#ua:top_menu_www.tut.by~5')]";
     @FindBy(xpath = AFISHA_LINK)
     private WebElement afishaLink;
 
-    final String RABOTA = ".//*[@id='mainmenu']/ul/li/a[contains(text(), 'Работа') ]";
+    final String RABOTA = "//a[contains(@href, 'http://jobs.tut.by/#ua:top_menu_www.tut.by~7')]";
     @FindBy(xpath = RABOTA)
     private WebElement rabota;
 

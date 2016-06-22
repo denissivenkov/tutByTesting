@@ -28,19 +28,19 @@ public class MainTest extends BaseTest {
         Assert.assertEquals(driver.getTitle(), MailPage.MAIL_PAGE_TITLE);
     }
 
-    @Test(enabled = false)
+    @Test
     public void checkRabotaPageIsOpened() {
         mainPage.goToRabotaPage();
         Assert.assertEquals(driver.getTitle(), RabotaPage.RABOTA_PAGE_TITLE);
     }
 
-    @Test(enabled = false)
+    @Test
     public void checkFinancePageIsOpened() {
         mainPage.goToFinancePage();
         Assert.assertEquals(driver.getTitle(), FinancePage.FINANCE_PAGE_TITLE);
     }
 
-    @Test(enabled = false)
+    @Test
     public void checkAfishaPageIsOpened() {
         mainPage.goToAfishaPage();
         Assert.assertEquals(driver.getTitle(), AfishaPage.AFISHA_PAGE_TITLE);
