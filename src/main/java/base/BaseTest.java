@@ -26,6 +26,7 @@ public abstract class BaseTest {
     public MainPage mainPage;
     public RabotaPage rabotaPage;
     public SearchPage searchPage;
+    public ProfilePage profilePage;
 
     public abstract void initPages();
 
@@ -74,6 +75,7 @@ public abstract class BaseTest {
     @Parameters("browser")
     @BeforeMethod
     public void setUp(String browser) {
+
         if (browser.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("chrome")) {
@@ -82,7 +84,7 @@ public abstract class BaseTest {
         } else {
             throw new IllegalArgumentException("The Browser Type is Undefined");
         }
-
+        driver.manage().window().maximize();
         initPages();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         log.info("Set timeout fro 20 seconds");

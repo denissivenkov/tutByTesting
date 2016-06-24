@@ -22,25 +22,25 @@ public class MainTest extends BaseTest {
         afishaPage = PageFactory.initElements(driver, AfishaPage.class);
     }
 
-    @Test
+    @Test (enabled = false)
     public void checkMailPageIsOpened() {
         mainPage.goToMailPage();
         Assert.assertEquals(driver.getTitle(), MailPage.MAIL_PAGE_TITLE);
     }
 
-    @Test
+    @Test (enabled = false)
     public void checkRabotaPageIsOpened() {
         mainPage.goToRabotaPage();
         Assert.assertEquals(driver.getTitle(), RabotaPage.RABOTA_PAGE_TITLE);
     }
 
-    @Test
+    @Test (enabled = false)
     public void checkFinancePageIsOpened() {
         mainPage.goToFinancePage();
         Assert.assertEquals(driver.getTitle(), FinancePage.FINANCE_PAGE_TITLE);
     }
 
-    @Test
+    @Test (enabled = false)
     public void checkAfishaPageIsOpened() {
         mainPage.goToAfishaPage();
         Assert.assertEquals(driver.getTitle(), AfishaPage.AFISHA_PAGE_TITLE);

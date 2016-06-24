@@ -71,6 +71,10 @@ public class MailPage extends BasePage {
     @FindBy(xpath = NEDVIZ_LINK)
     private WebElement nedvizLink;
 
+    final String ERROR_MESSAGE = ".//*[@id='form']/fieldset/strong";
+    @FindBy(xpath = ERROR_MESSAGE)
+    private WebElement errorMEssage;
+
 
 
     public void goToRabotaPage () {
@@ -143,6 +147,27 @@ public class MailPage extends BasePage {
         registrationButton.click();
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         log.info("User is on Registration page");
+    }
+
+    public void invalidCredentials(String name, String email) {
+        waitForElement(USER_NAME_FIELD);
+        userNameField.clear();
+        userNameField.sendKeys(name);
+        log.info("enter value in the 'USER NAME field'");
+        waitForElement(PASSWORD_FIELD);
+        passwordField.clear();
+        passwordField.sendKeys(email);
+        waitForElement(ENTER_BUTTON);
+        enterButton.click();
+        log.info("click on 'ENTER BUTTON'");
+        waitForElement(ERROR_MESSAGE);
+    }
+
+    public String getMailValidationText(){
+            waitForElement(ERROR_MESSAGE);
+            return errorMEssage.getText();
+
+
     }
 
 
